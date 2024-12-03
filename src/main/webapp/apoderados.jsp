@@ -1,9 +1,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="bootstrap/bootstrap.jsp"%>
+<%
+    String mensaje = (String) request.getAttribute("mensaje");
+    if (mensaje != null) {
+%>
+<div class="alert alert-success">
+    <%= mensaje %>
+</div>
+<%
+    }
+%>
+
 <html>
 <head>
-    <title>Title</title>
+    <title>Apoderados</title>
 </head>
 <meta charset="UTF-8">
 <body>

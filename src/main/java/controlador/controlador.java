@@ -141,6 +141,7 @@ public class controlador extends HttpServlet {
 
                 request.setAttribute("mensaje", "Curso agregado con éxito");
             }
+            request.getRequestDispatcher("cursos.jsp").forward(request, response);
 
             if ("Guardar".equals(accion)) {
                 String seccion = request.getParameter("txtseccion");
@@ -151,6 +152,7 @@ public class controlador extends HttpServlet {
 
                 request.setAttribute("mensaje", "Seccion agregado con éxito");
             }
+            request.getRequestDispatcher("cursos.jsp").forward(request, response);
 
             if ("Aceptar".equals(accion)) {
                 String turno = request.getParameter("txtturno");
@@ -161,6 +163,7 @@ public class controlador extends HttpServlet {
 
                 request.setAttribute("mensaje", "Turno agregado con éxito");
             }
+            request.getRequestDispatcher("cursos.jsp").forward(request, response);
             if ("Asignar".equals(accion)) {
                 String idcurso = request.getParameter("txtcurso");
                 String dia = request.getParameter("txtdia");
@@ -319,7 +322,7 @@ public class controlador extends HttpServlet {
 
                 notasdao.agregarNota(nota);
 
-                request.setAttribute("mensaje", "Contenido Eliminado con éxito");
+                request.setAttribute("mensaje", "Contenido agregado con éxito");
             }
             if ("Eliminar".equals(accion)) {
                 int id = Integer.parseInt(request.getParameter("id"));
@@ -327,7 +330,6 @@ public class controlador extends HttpServlet {
                 notasdao.eliminarNota(id);
                 request.setAttribute("mensaje", "Contenido Eliminado con éxito");
             }
-
 
             request.getRequestDispatcher("informacionNota.jsp").forward(request, response);
         }
@@ -476,6 +478,7 @@ public class controlador extends HttpServlet {
                 // Enviar un mensaje según el resultado
                 request.setAttribute("mensaje", "Apoderado Agregado con éxito");
             }
+            request.getRequestDispatcher("apoderados.jsp").forward(request, response);
             if ("Agregar".equals(accion)) {
                 String idApoderado = request.getParameter("txtapoderado");
                 String idEstudiante = request.getParameter("txtestudiante");
@@ -488,8 +491,9 @@ public class controlador extends HttpServlet {
                 directordao.agregarApoderadoHijo(director);
 
                 // Enviar un mensaje según el resultado
-                request.setAttribute("mensaje", "Apoderado Agregado con éxito");
+                request.setAttribute("mensaje", "Hijo agregado con éxito");
             }
+            request.getRequestDispatcher("apoderados.jsp").forward(request, response);
             if ("Eliminar".equals(accion)) {
                 int id = Integer.parseInt(request.getParameter("id"));
 
@@ -536,12 +540,14 @@ public class controlador extends HttpServlet {
                 // Enviar un mensaje según el resultado
                 request.setAttribute("mensaje", "Estudiante Agregado con éxito");
             }
+            request.getRequestDispatcher("estudiantes.jsp").forward(request, response);
             if ("Eliminar".equals(accion)) {
                 int id = Integer.parseInt(request.getParameter("id"));
 
                 directordao.eliminarEstudiante(id);
                 request.setAttribute("mensaje", "Estudiante Eliminado con éxito");
             }
+            request.getRequestDispatcher("estudiantes.jsp").forward(request, response);
             if ("Agregar".equals(accion)) {
                 String idcurso = request.getParameter("txtcurso");
                 String idestudiante = request.getParameter("txtestudiante");

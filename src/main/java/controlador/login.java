@@ -45,7 +45,7 @@ public class login extends HttpServlet {
 
             if (codigo != null && !codigo.isEmpty() && contrasena != null && !contrasena.isEmpty()) {
                 usuario = usuariodao.validar(codigo, contrasena);
-                if (usuario.getCorreo() != null) {
+                if (usuario !=null && usuario.getCorreo() != null ) {
                     HttpSession session = request.getSession();
                     session.setAttribute("usuarioSesion", usuario);
                     response.sendRedirect("controlador?menu=menu");

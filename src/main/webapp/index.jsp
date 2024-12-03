@@ -1,5 +1,16 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="bootstrap/bootstrap.jsp"%>
+<%
+    String mensaje = (String) request.getAttribute("mensaje");
+    if (mensaje != null) {
+%>
+<div class="alert alert-success">
+    <%= mensaje %>
+</div>
+<%
+    }
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
