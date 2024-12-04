@@ -322,7 +322,7 @@ public class controlador extends HttpServlet {
 
                 notasdao.agregarNota(nota);
 
-                request.setAttribute("mensaje", "Contenido agregado con éxito");
+                request.setAttribute("mensaje", "Nota agregada con éxito");
             }
             if ("Eliminar".equals(accion)) {
                 int id = Integer.parseInt(request.getParameter("id"));

@@ -198,11 +198,11 @@ public class notasDAO {
 
             // Insertar en la tabla Hijos
             ps = cn.prepareStatement(sqlnota);
-            ps.setInt(1, notas.getIdEstudiante());
-            ps.setDouble(2, notas.getCalificacion1());
-            ps.setDouble(3, notas.getCalificacion2());
-            ps.setDouble(4, notas.getCalificacion3());
-            ps.setDouble(5, notas.getCalificacion4());
+            ps.setDouble(1, notas.getCalificacion1());
+            ps.setDouble(2, notas.getCalificacion2());
+            ps.setDouble(3, notas.getCalificacion3());
+            ps.setDouble(4, notas.getCalificacion4());
+            ps.setInt(5, notas.getIdEstudiante());
             ps.setInt(6,notas.getIdCurso());
             int filasAfectadas = ps.executeUpdate();
 

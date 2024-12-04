@@ -59,7 +59,7 @@ public class usuarioDAO {
     public static void main(String[] args) {
         usuarioDAO test = new usuarioDAO();
 
-        usuario usuarioValidado = test.validar("profesor.justin@abl.pe", "jimenez");
+        usuario usuarioValidado = test.validar("", "");
 
         if (usuarioValidado.getIdUsuario() != 0) {
             System.out.println("Usuario encontrado:");
